@@ -17,7 +17,8 @@ with open('pkls/allSongList.pkl', 'rb') as f:
     allSongList = pickle.load(f)
 
 client_id = "6f51739589894b089686876c420ec812"
-client_secret = "fce52ef8f7a44305893701b1c01cd549"
+secrets = open("secrets.txt", 'r')
+client_secret = secrets.read()
 
 client_credentials_manager = SpotifyClientCredentials(client_id, client_secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
